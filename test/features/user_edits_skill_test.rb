@@ -1,9 +1,6 @@
 require_relative "../test_helper"
 
-class UserEditsSkillTest < Minitest::Test
-  include Capybara::DSL
-  include TestHelpers
-
+class UserEditsSkillTest < FeatureTest
   def test_changes_title_and_description
     data1 = {
       title:       "some title",

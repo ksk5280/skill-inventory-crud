@@ -1,9 +1,6 @@
 require_relative '../test_helper'
 
-class UserDeletesSkillTest < Minitest::Test
-  include Capybara::DSL
-  include TestHelpers
-
+class UserDeletesSkillTest < FeatureTest
   def test_existing_task_is_deleted
     data1 = {
       title: 'some skill',

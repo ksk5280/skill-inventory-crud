@@ -1,9 +1,6 @@
 require_relative '../test_helper'
 
-class UserCreatesSkillTest < Minitest::Test
-  include Capybara::DSL
-  include TestHelpers
-
+class UserCreatesSkillTest < FeatureTest
   def test_with_valid_attributes
     visit '/'
     click_link("New Skill")
