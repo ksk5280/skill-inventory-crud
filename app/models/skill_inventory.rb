@@ -23,23 +23,10 @@ class SkillInventory
   end
 
   def update(skill, id)
-    database.transaction do
-      target                = database['skills'].find { |data| data["id"] == id }
-      target["title"]       = skill[:title]
-      target["description"] = skill[:description]
-    end
+    dataset.where(:id => id).update(skill)
   end
 
   def delete(id)
-    database.transaction do
-      database['skills'].delete_if { |data| data["id"] == id }
-    end
-  end
-
-  def delete_all
-    database.transaction do
-      database['skills'] = []
-      database['total']  = 0
-    end
+    dataset.where(:id => id).delete
   end
 end
