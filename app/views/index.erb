@@ -1,13 +1,17 @@
 <div class="container text-center">
-  <h1>My Skills</h1>
-  <ol id="skills">
-    <% @skills.each do |skill| %>
-      <h3><%= skill.id %>: <a href="/skills/<%= skill.id %>"><%= skill.title %></a></h3>
-      <a href="/skills/<%= skill.id %>/edit">Edit</a>
-      <form class="" action="skills/<%= skill.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input class="btn btn-danger" type="submit" value="Delete">
-      </form>
-    <% end %>
-  </ol>
+  <h1 class="index-header">List of Skills</h1>
+  <div class="col-xs-6 col-xs-offset-3">
+    <ul id="skills">
+      <% @skills.each_with_index do |skill, index| %>
+        <li>
+          <a class="larger-text" href="/skills/<%= skill.id %>"><%= index + 1 %>. <%= skill.title %></a><br/>
+          <a class="btn btn-primary" href="/skills/<%= skill.id %>/edit">Edit</a>
+          <form action="skills/<%= skill.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

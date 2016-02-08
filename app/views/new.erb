@@ -1,8 +1,12 @@
-<form class="" action="/skills" method="post">
-  <h3>Enter a new skill:</h3>
-  Skill Title:<br/>
-  <input type="text" name="skill[title]"><br/>
-  Skill Description:<br/>
-  <textarea name="skill[description]" rows="8" cols="40"></textarea><br/>
-  <input class="btn btn-primary" type="submit" value="Create New Skill">
-</form>
+<div class="container text-center">
+  <form action="/skills" method="post">
+    <div class="form-group">
+      <h3>Enter a new skill</h3>
+      <label for="skill_title">Title:</label><br/>
+      <input type="text" name="skill[title]"><br/><br/>
+      <label for="skill_decription">Description:</label><br/>
+      <textarea name="skill[description]" rows="3"></textarea><br/><br/>
+      <input class="btn btn-primary" type="submit" value="Create New Skill">
+    </div>
+  </form>
+</div>
